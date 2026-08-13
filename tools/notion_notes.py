@@ -1,5 +1,6 @@
 import requests
 from langchain.tools import tool
+import os
 
 @tool
 def get_notes() -> list:

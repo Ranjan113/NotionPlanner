@@ -1,5 +1,6 @@
 from langchain.tools import tool
 import requests
+import os
 
 @tool
 def get_calendar_events(date:str) -> dict:
