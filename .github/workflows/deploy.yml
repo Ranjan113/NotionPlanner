@@ -18,18 +18,18 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v3
             - name: Log into the Container registry
-              uses: docker/login-actions@v2
+              uses: docker/login-action@v2
               with:
                 registry: ${{env.REGISTRY}}
                 usename: ${{github.actor}}
                 password: ${{secrets.GITHUB_TOKEN}}
             - name: Extract metadata (tags,labels)
               id: meta
-              uses: docker/metadata-actions@v4
+              uses: docker/metadata-action@v4
               with: 
                 images: ${{env.REGISTRY}}/${{env.IMAGE_NAME}}
             - name: Build and Push docker image
-              uses: docker/build-push-actions@v4
+              uses: docker/build-push-action@v4
               with:
                 context: .
                 push: true
